@@ -92,5 +92,9 @@
         button{
             @include ButtonStyle();
         }
+        .error{
+            color:red;
+            font-weight: bold;
+        }
     }
 }

@@ -119,4 +119,9 @@
   cursor: pointer;
   margin: 15px 0;
 }
+
+.App .NewTrack .error {
+  color: red;
+  font-weight: bold;
+}
 /*# sourceMappingURL=App.css.map */
