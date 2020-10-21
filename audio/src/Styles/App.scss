@@ -1,0 +1,95 @@
+// Style for All app 
+
+// Some style Functions will use more than once 
+//Button style 
+@mixin ButtonStyle {
+    background: #337AB7;
+    color:#fff;
+    padding:15px 40px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.App{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    //Style Search input 
+    .Search{
+        margin: 40px 0;
+        width: 80%;
+        h3{
+            margin: 0;
+            padding: 0;
+        }
+        input{
+            width: 100%;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border:1px solid #888;
+            margin-top:10px;
+        }
+    }
+    // style Track List 
+    .Track{
+        width: 80%;
+        audio{
+            width:100%;
+        }
+        ul{
+            padding:0;
+            list-style:none;
+            li{
+                padding: 15px;
+                border: 1px solid #eee;
+                transition: all .3s ease-in-out;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                span{
+                    display: block;
+                }
+                div{
+                    width:98%;
+                    .NameofTrack{
+                        color:#337AB7;
+                    }
+                }
+                &:hover{
+                    background: #337AB7;
+                    color:#fff;
+                    .NameofTrack{
+                        color:#fff;
+                    }
+                }
+            }
+            //active track style 
+            .active{
+                background: #337AB7;
+                color:#fff;
+                .NameofTrack{
+                    color:#fff;
+                }
+            }
+        }
+    }
+
+    //Start Style AddNew Track Componetn
+    .NewTrack {
+        width: 80%;
+        display :flex;
+        align-items: center;
+        flex-direction: column;;
+        input{
+            display: block;
+            padding: 5px;
+            width:300px;
+            margin:10px 0;
+        }
+        button{
+            @include ButtonStyle();
+        }
+    }
+}

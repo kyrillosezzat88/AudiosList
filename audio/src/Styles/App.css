@@ -1,0 +1,121 @@
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .Search {
+  margin: 40px 0;
+  width: 80%;
+}
+
+.App .Search h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.App .Search input {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #888;
+  margin-top: 10px;
+}
+
+.App .Track {
+  width: 80%;
+}
+
+.App .Track audio {
+  width: 100%;
+}
+
+.App .Track ul {
+  padding: 0;
+  list-style: none;
+}
+
+.App .Track ul li {
+  padding: 15px;
+  border: 1px solid #eee;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.App .Track ul li span {
+  display: block;
+}
+
+.App .Track ul li div {
+  width: 98%;
+}
+
+.App .Track ul li div .NameofTrack {
+  color: #337AB7;
+}
+
+.App .Track ul li:hover {
+  background: #337AB7;
+  color: #fff;
+}
+
+.App .Track ul li:hover .NameofTrack {
+  color: #fff;
+}
+
+.App .Track ul .active {
+  background: #337AB7;
+  color: #fff;
+}
+
+.App .Track ul .active .NameofTrack {
+  color: #fff;
+}
+
+.App .NewTrack {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .NewTrack input {
+  display: block;
+  padding: 5px;
+  width: 300px;
+  margin: 10px 0;
+}
+
+.App .NewTrack button {
+  background: #337AB7;
+  color: #fff;
+  padding: 15px 40px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+/*# sourceMappingURL=App.css.map */
