@@ -6,7 +6,7 @@ export default function Search() {
     const {Audios , dispatch} = useContext(AudiosContext);
     //Search Function 
     const SearchResults = (SearchWord) =>{// function to filter audis depend on name of tracks 
-        let Results = Audios.Audios.filter(audio => audio.Name.toLowerCase().includes(SearchWord.toLowerCase()));
+        let Results = Audios.Audios.filter(audio => audio.name.toLowerCase().includes(SearchWord.toLowerCase()));
         dispatch({type:"SEARCH_RESULT" , data:Results.length ? Results : "Opps! Track Not Found" }) // dispatch and action and if there is audios will store it in SearchREsult arr if not will send string with message  
     }
     return (

@@ -20,10 +20,10 @@ const AddNewTrack = () => {
             {/* Create From for new track */}
             {AddNewTrack ? (
                 <form onSubmit={AddTrack}>
-                    <input type="text" placeholder='Enter Name of Track ' onChange={(e) => setNewTrack({...NewTrack , Name:e.target.value})} required />
-                    <input type="text" placeholder='Enter length of Track' onChange={(e) => setNewTrack({...NewTrack , Length:e.target.value})} required/>
-                    <input type="text" placeholder='Enter Artist of Track ' onChange={(e) => setNewTrack({...NewTrack , Artist:e.target.value})} required />
-                    <input type="file" placeholder='Enter Path of Track ' onChange={(e) => {setNewTrack({...NewTrack , Path:URL.createObjectURL(e.target.files[0])}); console.log(URL.createObjectURL(e.target.files[0]))}} required />
+                    <input type="text" placeholder='Enter Name of Track ' onChange={(e) => setNewTrack({...NewTrack , name:e.target.value})} required />
+                    <input type="text" placeholder='Enter length of Track' onChange={(e) => setNewTrack({...NewTrack , length:e.target.value})} required/>
+                    <input type="text" placeholder='Enter Artist of Track ' onChange={(e) => setNewTrack({...NewTrack , artist:e.target.value})} required />
+                    <input type="text" placeholder='Enter Path of Track ' onChange={(e) => setNewTrack({...NewTrack , url:e.target.value})} required />
                     <button>ADD</button>
                 </form>
             ) : null}

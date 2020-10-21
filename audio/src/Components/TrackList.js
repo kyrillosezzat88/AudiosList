@@ -4,11 +4,11 @@ const TrackList = () => {
     //Conect Component with contextapi
     const {Audios ,dispatch} = useContext(AudiosContext);
     //state to store track path to pass it to audio 
-    const [Track ,setTrack] = useState(Audios.Audios.length > 0 ? Audios.Audios[0].Path : ''); // by default we set first song on list 
+    const [Track ,setTrack] = useState(''); // by default we set first song on list 
     //function to remove track from track lists 
-    const RemoveTrack = (id) => {
+    const RemoveTrack = (url) => {
         //dispatch an action to remove track using id 
-        dispatch({type:"REMOVE_TRACK" , id})
+        dispatch({type:"REMOVE_TRACK" , url})
     }
     return(
         <div className="Track">
@@ -27,29 +27,29 @@ const TrackList = () => {
                                 <h3>Opps! Track Not Found</h3>
                                 ) : 
                                 Audios.SearchResult.map(audio => (
-                                    <li className={Track === audio.Path ? 'active' : ''} key={audio.id} >
-                                        <div onClick={() => setTrack(audio.Path)}>
-                                            <span className='NameofTrack'>{audio.Name}</span>
-                                            <span>{audio.Length}</span>
+                                    <li className={Track === audio.url ? 'active' : ''} key={audio.id} >
+                                        <div onClick={() => setTrack(audio.url)}>
+                                            <span className='NameofTrack'>{audio.name}</span>
+                                            <span>{audio.length}</span>
                                         </div>
                                         <span onClick={() => {RemoveTrack(audio.id);setTrack('')}}>x</span>
                                     </li>
                                 ))
                             :
                             Audios.Audios.map(audio => ( // render audios if there is no search result (empty) 
-                                <li className={Track === audio.Path ? 'active' : ''} key={audio.id} >
-                                    <div onClick={() => setTrack(audio.Path)}> {/* To set current of clicked track */}
-                                        <span className='NameofTrack'>{audio.Name}</span>
-                                        <span>{audio.Length}</span>
+                                <li className={Track === audio.url ? 'active' : ''} key={audio.id} >
+                                    <div onClick={() => setTrack(audio.url)}> {/* To set current of clicked track */}
+                                        <span className='NameofTrack'>{audio.name}</span>
+                                        <span>{audio.length}</span>
                                     </div>
-                                    <span onClick={() => {RemoveTrack(audio.id);setTrack('')}}>x</span> {/* when click on X Button will dispatch and remove action to remove track from list nd remove it from current Audio if it selected  */}
+                                    <span onClick={() => {RemoveTrack(audio.url);setTrack('')}}>x</span> {/* when click on X Button will dispatch and remove action to remove track from list nd remove it from current Audio if it selected  */}
                                 </li>
                             ))
                         }
                     </ul>
                 </div>
             ) : (
-                <h4>Opps! No Audios Found </h4> //if there is no any track on list
+                <h4>Loading...</h4> //if there is no any track on list
             )}
         </div>
     )
