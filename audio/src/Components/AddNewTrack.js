@@ -12,8 +12,6 @@ const AddNewTrack = () => {
     // Define Function to Dispatch an action to add newTrack to Track List 
     const AddTrack = (e) => {
         e.preventDefault();
-        // dispatch action with data of newtrack with generated id by math.random this not best way to generate id we can use uuid lib but i used this way to make it simple without any liberaries 
-        dispatch({type:'ADD_NEW_TRACK' , data:{...NewTrack , id:Math.floor(Math.random() * 105)}});
         if(Object.keys(NewTrack).length === 4){
             // dispatch action with data of newtrack with generated id by math.random this not best way to generate id we can use uuid lib but i used this way to make it simple without any liberaries 
             dispatch({type:'ADD_NEW_TRACK' , data:{...NewTrack , id:Math.floor(Math.random() * 105)}});
